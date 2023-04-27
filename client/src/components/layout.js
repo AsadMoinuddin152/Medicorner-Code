@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
     const { user } = useSelector((state) => state.user);
     const location = useLocation();
     const navigate = useNavigate();
-    // logout funtion
+    // logout function
     const handleLogout = () => {
         localStorage.clear();
         message.success('Logout Successfully');
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     const doctorMenu = [
         {
             name: 'Home',
-            path: '/HomePage',
+            path: '/',
             icon: 'fa-solid fa-house',
         },
         {
@@ -28,7 +28,6 @@ const Layout = ({ children }) => {
             path: '/doctor-appointments',
             icon: 'fa-solid fa-list',
         },
-
         {
             name: 'Profile',
             path: `/doctor/profile/${user?._id}`,
@@ -37,7 +36,7 @@ const Layout = ({ children }) => {
     ];
     // =========== doctor menu ===============
 
-    // redering menu list
+    // rendering menu list
     const SidebarMenu = user?.isAdmin
         ? adminMenu
         : user?.isDoctor
@@ -49,7 +48,7 @@ const Layout = ({ children }) => {
                 <div className="layout">
                     <div className="sidebar">
                         <div className="logo">
-                            <h6 className="text-light">DOC APP</h6>
+                            <h6 className="text-light">MediCorner</h6>
                             <hr />
                         </div>
                         <div className="menu">
@@ -57,7 +56,7 @@ const Layout = ({ children }) => {
                                 const isActive =
                                     location.pathname === menu.path;
                                 return (
-                                    <>
+                                    <div>
                                         <div
                                             className={`menu-item ${
                                                 isActive && 'active'
@@ -68,7 +67,7 @@ const Layout = ({ children }) => {
                                                 {menu.name}
                                             </Link>
                                         </div>
-                                    </>
+                                    </div>
                                 );
                             })}
                             <div
@@ -94,7 +93,6 @@ const Layout = ({ children }) => {
                                 >
                                     <i class="fa-solid fa-bell"></i>
                                 </Badge>
-
                                 <Link to="/profile">{user?.name}</Link>
                             </div>
                         </div>

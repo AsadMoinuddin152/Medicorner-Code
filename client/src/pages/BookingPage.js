@@ -35,7 +35,7 @@ const BookingPage = () => {
             console.log(error);
         }
     };
-    // ============ handle availiblity
+    // ============ handle availability
     const handleAvailability = async () => {
         try {
             dispatch(showLoading());
@@ -105,7 +105,7 @@ const BookingPage = () => {
     }, []);
     return (
         <Layout>
-            <h3>Booking Page</h3>
+            <h3 className="heading text-center p-2">Booking Page</h3>
             <div className="container m-2">
                 {doctors && (
                     <div>
@@ -120,7 +120,7 @@ const BookingPage = () => {
                         <div className="d-flex flex-column w-50">
                             <DatePicker
                                 aria-required={'true'}
-                                className="m-2"
+                                className="input"
                                 format="DD-MM-YYYY"
                                 onChange={(value) => {
                                     setDate(moment(value).format('DD-MM-YYYY'));
@@ -129,7 +129,7 @@ const BookingPage = () => {
                             <TimePicker
                                 aria-required={'true'}
                                 format="HH:mm"
-                                className="mt-3"
+                                className="input"
                                 onChange={(value) => {
                                     setTime(moment(value).format('HH:mm'));
                                 }}

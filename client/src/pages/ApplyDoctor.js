@@ -36,14 +36,14 @@ const ApplyDoctor = () => {
             dispatch(hideLoading());
             if (res.data.success) {
                 message.success(res.data.message);
-                navigate('/');
+                navigate('/HomePage');
             } else {
                 message.error(res.data.message);
             }
         } catch (error) {
             dispatch(hideLoading());
             console.log(error);
-            message.error('Somthing Went Wrrong ');
+            message.error('Something Went Wrong ');
         }
     };
     return (

@@ -64,16 +64,23 @@ const NotificationPage = () => {
         } catch (error) {
             dispatch(hideLoading());
             console.log(error);
-            message.error('Somthing Went Wrong In Ntifications');
+            message.error('Something Went Wrong In Notifications');
         }
     };
     return (
         <Layout>
             <h4 className="p-3 text-center">Notification Page</h4>
             <Tabs>
-                <Tabs.TabPane tab="unRead" key={0}>
+                <Tabs.TabPane tab="Inbox" key={0}>
                     <div className="d-flex justify-content-end">
-                        <h4 className="p-2" onClick={handleMarkAllRead}>
+                        <h4
+                            className="p-2 Read_button"
+                            onClick={handleMarkAllRead}
+                            style={{
+                                cursor: 'pointer',
+                                border: '2px solid #131313',
+                            }}
+                        >
                             Mark All Read
                         </h4>
                     </div>
@@ -93,8 +100,11 @@ const NotificationPage = () => {
                 <Tabs.TabPane tab="Read" key={1}>
                     <div className="d-flex justify-content-end">
                         <h4
-                            className="p-2 text-primary"
-                            style={{ cursor: 'pointer' }}
+                            className="p-2 text-danger Read_button"
+                            style={{
+                                cursor: 'pointer',
+                                border: '2px solid #131313',
+                            }}
                             onClick={handleDeleteAllRead}
                         >
                             Delete All Read

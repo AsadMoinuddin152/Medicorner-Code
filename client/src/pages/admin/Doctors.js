@@ -81,7 +81,7 @@ const Doctors = () => {
                             Approve
                         </button>
                     ) : (
-                        <button className="btn btn-danger">Reject</button>
+                        <button className="admin btn btn-danger">Reject</button>
                     )}
                 </div>
             ),
@@ -91,7 +91,7 @@ const Doctors = () => {
     return (
         <Layout>
             <h1 className="text-center m-3">All Doctors</h1>
-            <Table columns={columns} dataSource={doctors} />
+            <Table className="content" columns={columns} dataSource={doctors} />
         </Layout>
     );
 };

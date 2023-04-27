@@ -39,7 +39,7 @@ const Profile = () => {
             dispatch(hideLoading());
             if (res.data.success) {
                 message.success(res.data.message);
-                navigate('/HomePage');
+                navigate('/');
             } else {
                 message.error(res.data.success);
             }
@@ -196,8 +196,8 @@ const Profile = () => {
                         </Col>
                         <Col xs={24} md={24} lg={8}>
                             <Form.Item
-                                label="Fees Per Cunsaltation"
-                                name="feesPerCunsaltation"
+                                label="Fees Per Consultation"
+                                name="feesPerConsultation"
                                 required
                                 rules={[{ required: true }]}
                             >

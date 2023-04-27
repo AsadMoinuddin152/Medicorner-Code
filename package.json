@@ -1,5 +1,5 @@
 {
-    "name": "Medicorner",
+    "name": "MediCorner",
     "version": "1.0.0",
     "description": "Medicorner is a web application that allows users to search for doctors and book appointments with them. It also allows doctors to create their profiles and manage their appointments.",
     "main": "server.js",
